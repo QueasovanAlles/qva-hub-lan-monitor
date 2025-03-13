@@ -1,0 +1,31 @@
+.ws-panel {
+	position:relative;
+	width:calc(100% - 2.1rem);
+	height:100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    
+    .ws-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        
+        .filter-input {
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+    }
+
+	.cable-layer {
+	  position: absolute;
+	  top: 8px;
+	  left: 8px;
+	  width: calc(100% - 8px);
+	  height:  calc(100% - 8px);
+	  pointer-events: none;
+	  z-index: 1000;
+	}
+}
+

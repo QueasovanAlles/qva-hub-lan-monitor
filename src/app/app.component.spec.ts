@@ -12,16 +12,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'qvahub-lan-monitor'`, () => {
+  it(`should have as title 'mylore-monitor'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('qvahub-lan-monitor');
+    expect(app.title).toEqual('mylore-monitor');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('qvahub-lan-monitor app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('mylore-monitor app is running!');
   });
 });

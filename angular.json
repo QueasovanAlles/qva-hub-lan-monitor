@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "outputPath": "dist/qvahub-lan-monitor",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -100,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4d687648-d21d-4f42-88f4-5ac4d9b83fe1"
   }
 }

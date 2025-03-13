@@ -1,0 +1,55 @@
+<div class="client-item">
+    <div class="absolute-container">
+
+	<div class="status-indicator" 
+		 [class.connected]="device.wsClient.isConnected">
+	</div>
+
+	<table><tr><td style="width:50%">
+	<div class="client-info">
+		<div class="client-header">
+			<span class="type-badge">{{device.wsClient.type}}</span>
+			<span class="name">{{device.wsClient.name}}</span>
+		</div>
+		<div class="client-details">
+			<span class="id">ID: {{device.wsClient.clientId}}</span>
+			<span class="webrtcType">WebRTC Type: {{device.wsClient.webrtcType}}</span>
+			<span class="activity">
+				Last active: {{device.wsClient.lastActivity | date:'HH:mm:ss'}}
+			</span>
+			<span class="message">
+				Last msg: {{device.wsClient.lastMessage}}
+			</span>
+		</div>
+	</div>
+    </td><td>
+	
+	  <!-- Bottom row for inputs and outputs -->
+	<div class="ports-container">
+		<!-- Inputs (left side) -->
+		<div class="inputs">
+		  <span class="port-label">Inputs</span>
+		  <app-audio-jack-hole 
+			*ngFor="let inputId of device.inputIds; let idx = index" 
+			[inout]="InOut.INPUT"
+			[id]="inputId">
+		  </app-audio-jack-hole>
+		</div>
+</div>
+</td><td>
+<div class="ports-container" style="float:right">
+		<!-- Outputs (right side) -->
+		<div class="outputs">
+		  <app-audio-jack-hole  style="float:right"
+			*ngFor="let outputId of device.outputIds; let idx = index" 
+			[inout]="InOut.OUTPUT"
+			[id]="outputId">
+		  </app-audio-jack-hole>
+		  <span class="port-label" style="float:right">Outputs</span>
+		 
+		</div>
+	  </div>
+
+	
+	</td></tr></table></div>
+</div>
